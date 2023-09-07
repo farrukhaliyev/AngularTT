@@ -1,0 +1,71 @@
+<!-- Arithmetic operation with interpolation syntax -->
+<!-- <input value="{{name + surname}}"> -->
+
+
+
+<!-- 2 way model binding -->
+<!-- ngModel directive in form elements-->
+
+<!-- <input [(ngModel)]="content">
+<br><br>
+<input [(ngModel)]="content">
+<p>{{content}}</p> -->
+
+<!-- ngNonBindable disables string interpolation -->
+
+<!-- <p ngNonBindable> This is my {{content}}</p> -->
+
+
+<!-- Pipe usage with interpolation syntax -->
+
+<!-- <p>{{content | uppercase}}</p> -->
+
+<!-- Directives helps us to manipulate HTML elements' behaviours -->
+<!-- directives with * are structural directives -->
+<!-- *ngFor directive usage. Helps to iterate over  array -->
+
+<!-- <ul>
+        <li *ngFor="let name of names;index as i;
+                                             even as isEven;
+                                                            let isFirst = first;
+                                                            let isOdd = odd;"    >{{name}} - {{i}} - {{isEven}} - {{isOdd}}</li>
+    </ul> --> 
+
+
+<!-- *ngIf directive used for to control visibility of HTML elements -->
+
+<!-- <p *ngIf="visibility; else osman">I'm invisible</p>
+<ng-template #osman>
+    <p>
+        I'm invisible too
+    </p>
+</ng-template> -->
+
+
+<!-- [ngSwitch] directive, directive wih braces means it is custom directive -->
+
+<!-- <div [ngSwitch]="num">
+    <div *ngSwitchCase="1">It's number 1</div>
+    <div *ngSwitchCase="2">It's number 2</div>
+    <div *ngSwitchDefault>Number else than mentioned ones</div>
+</div> -->
+
+
+<!-- [ngClass] directive. Used to give classes to elements, [ngStyle] is the same as class -->
+
+<!-- <p [ngClass]="className">ngClass directive use case</p> -->
+
+<!-- Custom directive usage . testDirective -->
+
+
+<!-- <div appTest Color="yellow">Test</div>  class referance  -->
+<!-- <div class="appTest"></div> -> attribute referance -->
+
+<!-- Custom Directives -->
+<!-- <p *appCustomIf="true">Boooo</p> 
+
+<ul>
+   <li *appCustomFor="names; let fruits = $implicit">Item - {{fruits}}</li> 
+</ul> -->
+
+<div>{{names | katana: 1:3}}</div>
