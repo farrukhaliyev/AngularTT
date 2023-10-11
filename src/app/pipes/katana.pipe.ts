@@ -14,7 +14,7 @@ export class KatanaPipe implements PipeTransform {
         rsArray.push(array[i]);
       }
     }
-    else rsArray.push("ArgumentException");
+    else throw new Error("ArgumentException");
     
     return rsArray;
   }

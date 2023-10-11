@@ -1,0 +1,54 @@
+<!-- Template Driven form -->
+
+<!-- <form #frm="ngForm" (ngSubmit)="onSubmit(frm.value)">
+    <input type="text" name="name" placeholder="Name" ngModel><br><br>
+    <input type="text" name="surname" placeholder="Surname" ngModel><br><br>
+    <div ngModelGroup="address">
+        <input type="text" name="country" placeholder="Country" ngModel><br><br>
+        <input type="text" name="city" placeholder="City" ngModel><br><br>
+    </div>
+    <select name="job" #fJob="ngModel" ngModel>
+        <option value="0" default>None</option>
+        <option value="1">Software Dev.</option>
+        <option value="2">Data Scientist</option>
+        <option value="3">Database Dev.</option>
+    </select><br><br>
+    <button>Send</button>
+</form> -->
+
+
+
+<!-- Model Driven form -->
+
+<form [formGroup]="frm" (ngSubmit)="onSubmit(frm)">
+    <div *ngIf="!name.valid && (name.touched || name.dirty)" style="color: red;">
+        Name should consist 5 or more letters
+    </div>
+    <input type="text" formControlName="name" placeholder="Name"><br><br>
+    <input type="text" formControlName="surname" placeholder="Surname"><br><br>
+    <div formGroupName="address">
+        <div *ngIf="!country.valid && (country.touched || country.dirty)" style="color: red;">
+        {{country.errors | json}}
+        </div>
+        <input type="text" formControlName="country" placeholder="Country"><br><br>
+        <input type="text" formControlName="city" placeholder="City"><br><br>
+    </div>
+    <select formControlName="job">
+        <option value="0">None</option>
+        <option value="1">Software Dev.</option>
+        <option value="2">Data Scientist</option>
+        <option value="3">Database Dev.</option>
+    </select><br><br>
+    <div *ngIf="!date.valid && (date.touched || date.dirty)" style="color: red;">
+        {{date.errors | json}}
+    </div><br>
+    <div formGroupName="date">
+        <input type="date" formControlName="startDate" placeholder="Start Date">
+        <br><br>
+        <input type="date" formControlName="endDate" placeholder="End Date">
+    </div>
+    <br>
+    <button type="submit">Send</button> 
+</form>
+
+Valid: {{frm.valid}}
