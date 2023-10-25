@@ -3,6 +3,6 @@ import { HomeComponent } from "../components/home/home.component";
 import { FormComponent } from "../components/form/form.component";
 
 export const routes :Routes = [
-    {path: "home", component: HomeComponent},
-    {path: "form", component: FormComponent}
+    {path: "home/main", component: HomeComponent},
+    {path: "form/main", component: FormComponent}
 ];

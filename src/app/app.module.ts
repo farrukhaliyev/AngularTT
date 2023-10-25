@@ -17,6 +17,7 @@ import { TestService } from './services/TestService';
 import { RandomNumService } from './services/RandomNumService';
 import { RouterModule } from '@angular/router';
 import { routes } from 'src/app/routes/routes';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -34,9 +35,10 @@ import { routes } from 'src/app/routes/routes';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    // RouterModule.forRoot(routes)
   ],
   providers: [
+    // { provide: APP_BASE_HREF, useValue: "/myapp/"},
     BookService, // { provide : BookService, useClass: BookService } same thing
     // {provide: "BookService", useClass: BookService},
     // {provide: bookService, useClass: BookService},
